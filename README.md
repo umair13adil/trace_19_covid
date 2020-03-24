@@ -2,6 +2,13 @@
 
 An app for self evaluation, self-diagnosis &amp; response for COVID-19.
 
+![Survey Page1](pictures/image1.png)
+![Survey Page2](pictures/image2.png)
+![Survey Page3](pictures/image3.png)
+![Survey Page4](pictures/image4.png)
+
+This is the UI form design for Covid-19 survey app. 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

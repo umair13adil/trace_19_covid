@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:trace_19_covid/models/survey_form.dart';
+import 'package:trace_19_covid/models/survey.dart';
 
 abstract class SurveyState extends Equatable {
   const SurveyState();
@@ -31,6 +31,15 @@ class SurveyStep3 extends SurveyState {
   final Survey survey;
 
   const SurveyStep3({@required this.survey}) : assert(Survey != null);
+
+  @override
+  List<Object> get props => [survey];
+}
+
+class SurveyStep4 extends SurveyState {
+  final Survey survey;
+
+  const SurveyStep4({@required this.survey}) : assert(Survey != null);
 
   @override
   List<Object> get props => [survey];

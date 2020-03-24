@@ -1,8 +1,12 @@
-import 'package:trace_19_covid/models/survey_form.dart';
+import 'package:trace_19_covid/data/dao/survey_dao.dart';
+import 'package:trace_19_covid/models/survey.dart';
 
 class SurveyProvider {
-  Survey getSurveyData() {
-    Survey survey = new Survey();
-    return survey;
-  }
+  final surveyDao = SurveyDao();
+
+  Future getSurvey({String query}) => surveyDao.getSurvey();
+
+  Future insertSurvey(Survey survey) => surveyDao.createSurvey(survey);
+
+  Future updateSurvey(Survey survey) => surveyDao.updateSurvey(survey);
 }

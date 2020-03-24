@@ -9,34 +9,7 @@ enum TravelHistory {
 enum Exposure { MET_SOMEONE, DID_NOT_MET_ANYONE, HAD_CLOSE_CONTACT }
 enum Condition { IMPROVED, NO_CHANGE, WORSENED }
 
-List<String> symptomsList = [
-  'Dry Cough',
-  'Sneezing',
-  'Sore Throat',
-  'Weakness',
-  'Flu',
-  'None of these'
-];
-
-List<String> addSymptomsList = [
-  'Moderate to Severe Cough',
-  'Feeling Breathless',
-  'Difficulty in Breathing',
-  'Drowsiness',
-  'Persistent pain in chest',
-  'Severe Weakness',
-  'None of these'
-];
-
-List<String> medicalHistoryList = [
-  'Diabetes',
-  'High Blood Pressure',
-  'Heart Disease',
-  'Lung Disease',
-  'None of these'
-];
-
-class Survey {
+class SurveyForm {
   int age;
   Gender gender;
   List<String> symptoms;
@@ -47,7 +20,34 @@ class Survey {
   List<String> medicalHistory;
   Condition condition;
 
-  String getTemperature(Temperature t) {
+  static List<String> symptomsList = [
+    'Dry Cough',
+    'Sneezing',
+    'Sore Throat',
+    'Weakness',
+    'Flu',
+    'None of these'
+  ];
+
+  static List<String> addSymptomsList = [
+    'Moderate to Severe Cough',
+    'Feeling Breathless',
+    'Difficulty in Breathing',
+    'Drowsiness',
+    'Persistent pain in chest',
+    'Severe Weakness',
+    'None of these'
+  ];
+
+  static List<String> medicalHistoryList = [
+    'Diabetes',
+    'High Blood Pressure',
+    'Heart Disease',
+    'Lung Disease',
+    'None of these'
+  ];
+
+  static String getTemperature(Temperature t) {
     switch (t) {
       case Temperature.NO_FEVER:
         return 'No Fever';
@@ -56,11 +56,11 @@ class Survey {
       case Temperature.HIGH_FEVER:
         return 'High Fever';
       default:
-        return null;
+        return "";
     }
   }
 
-  String getTravelHistory(TravelHistory t) {
+  static String getTravelHistory(TravelHistory t) {
     switch (t) {
       case TravelHistory.TRAVELED:
         return 'Traveled in last 14 days';
@@ -71,24 +71,24 @@ class Survey {
       case TravelHistory.NO_TRAVEL_HISTORY:
         return 'No Travel History';
       default:
-        return null;
+        return "";
     }
   }
 
-  String getExposure(Exposure t) {
+  static String getExposure(Exposure t) {
     switch (t) {
       case Exposure.MET_SOMEONE:
         return 'Met someone with similar symptoms';
       case Exposure.DID_NOT_MET_ANYONE:
         return 'Did not meet anyone with similar symptoms';
-      case Exposure.DID_NOT_MET_ANYONE:
+      case Exposure.HAD_CLOSE_CONTACT:
         return 'Close contact with someone with COVID-19 in last 14 days';
       default:
-        return null;
+        return "";
     }
   }
 
-  String getCondition(Condition t) {
+  static String getCondition(Condition t) {
     switch (t) {
       case Condition.IMPROVED:
         return 'Improved';
@@ -97,7 +97,7 @@ class Survey {
       case Condition.WORSENED:
         return 'Worsened';
       default:
-        return null;
+        return "";
     }
   }
 }

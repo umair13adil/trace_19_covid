@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class SurveyEvent extends Equatable {
@@ -24,6 +23,14 @@ class StartSurveyStep2 extends SurveyEvent {
 class StartSurveyStep3 extends SurveyEvent {
 
   const StartSurveyStep3();
+
+  @override
+  List<Object> get props => [];
+}
+
+class StartSurveyStep4 extends SurveyEvent {
+
+  const StartSurveyStep4();
 
   @override
   List<Object> get props => [];

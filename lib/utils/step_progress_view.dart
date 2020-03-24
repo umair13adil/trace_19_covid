@@ -52,7 +52,7 @@ class StepProgressView extends StatelessWidget {
     this.padding,
     this.lineHeight = 2.0,
   })  : _stepsText = stepsText,
-        _curStep = curStep,
+        _curStep = curStep + 1,
         _height = height,
         _width = width,
         _dotRadius = dotRadius,
@@ -60,7 +60,7 @@ class StepProgressView extends StatelessWidget {
         _inactiveColor = inactiveColor,
         _headerStyle = headerStyle,
         _stepStyle = stepsStyle,
-        assert(curStep > 0 == true && curStep <= stepsText.length),
+        assert(curStep > 0 == true && curStep <= stepsText.length + 1),
         assert(width > 0),
         assert(height >= 2 * dotRadius),
         assert(width >= dotRadius * 2 * stepsText.length),
@@ -80,7 +80,7 @@ class StepProgressView extends StatelessWidget {
                     child: RichText(
                         text: TextSpan(children: [
               TextSpan(
-                text: (_curStep).toString(),
+                text: (_curStep - 1).toString(),
                 style: _headerStyle.copyWith(
                   color: _activeColor, //this is always going to be active
                 ),
@@ -88,7 +88,7 @@ class StepProgressView extends StatelessWidget {
               TextSpan(
                 text: " / " + _stepsText.length.toString(),
                 style: _headerStyle.copyWith(
-                  color: _curStep == _stepsText.length
+                  color: (_curStep - 1) == _stepsText.length
                       ? _activeColor
                       : _inactiveColor,
                 ),
